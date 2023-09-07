@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: salmanandb/teamboard:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=production   
+      - PORT=8080 
+    networks:
+      - apsis
+
+networks:
+  apsis:
